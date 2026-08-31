@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/recovery-plan.py": {
+      "runtime": "python3.12"
+    }
+  }
+}
