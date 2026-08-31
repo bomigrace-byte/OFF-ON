@@ -77,7 +77,10 @@ class handler(BaseHTTPRequestHandler):
             self._send_json(200, json.loads(response.output_text))
         except Exception as error:
             print(f"OpenAI request failed: {error}")
-            self._send_json(502, {"error": "AI 응답을 생성하지 못했습니다."})
+            self._send_json(502, {
+                "error": "AI 응답을 생성하지 못했습니다.",
+                "code": type(error).__name__
+            })
 
     def do_GET(self):
         self._send_json(405, {"error": "POST 요청만 지원합니다."})
