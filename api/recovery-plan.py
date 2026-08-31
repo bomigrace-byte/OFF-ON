@@ -75,7 +75,8 @@ class handler(BaseHTTPRequestHandler):
                 text={"format": {"type": "json_schema", "name": "recovery_plan", "strict": True, "schema": schema}},
             )
             self._send_json(200, json.loads(response.output_text))
-        except Exception:
+        except Exception as error:
+            print(f"OpenAI request failed: {error}")
             self._send_json(502, {"error": "AI 응답을 생성하지 못했습니다."})
 
     def do_GET(self):
