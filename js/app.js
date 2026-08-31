@@ -61,10 +61,15 @@ async function requestPlan() {
   try {
     const payload = { ...state.answers, isOffWork: state.answers.isOffWork === 'true' };
     const response = await fetch('/api/recovery-plan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: controller.signal });
-    if (!response.ok) throw new Error('API request failed');
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.code || 'unknown'); 
+    }
     showResult(await response.json());
   } catch (error) {
     loadingState.hidden = true; apiError.hidden = false;
+    document.querySelector('#api-error p').textContent =
+    `잠시 후 다시 시도해 주세요. (오류 코드: ${error.message})`;
   } finally { clearTimeout(timeout); }
 }
 
