@@ -57,7 +57,7 @@ async function requestPlan() {
   resultSection.hidden = false; loadingState.hidden = false; resultCard.hidden = true; apiError.hidden = true;
   resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
+  const timeout = setTimeout(() => controller.abort(), 45000);
   try {
     const payload = { ...state.answers, isOffWork: state.answers.isOffWork === 'true' };
     const response = await fetch('/api/recovery-plan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: controller.signal });
