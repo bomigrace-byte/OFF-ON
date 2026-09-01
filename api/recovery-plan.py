@@ -79,9 +79,10 @@ class handler(BaseHTTPRequestHandler):
             self._send_json(200, json.loads(response.text))
         except Exception as error:
             print(f"Gemini request failed: {error}")
+            error_status = getattr(error, "code", "unknown")
             self._send_json(502, {
                 "error": "Gemini 응답을 생성하지 못했습니다.",
-                "code": type(error).__name__
+                "code": f"{type(error).__name__} ({error_status})"
             })
 
     def do_GET(self):
