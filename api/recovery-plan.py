@@ -67,7 +67,7 @@ class handler(BaseHTTPRequestHandler):
         try:
             client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
             response = client.models.generate_content(
-                model=os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite"),
+                model=os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite"),
                 contents=f"{instructions}\n\n사용자 입력 JSON:\n{user_input}",
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
