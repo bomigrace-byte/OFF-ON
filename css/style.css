@@ -5,3 +5,7 @@
   max-width: none;
   white-space: nowrap;
 }
+.routine-list li > span {
+  white-space: nowrap;
+  min-width: 80px;
+}
