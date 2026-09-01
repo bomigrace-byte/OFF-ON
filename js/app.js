@@ -40,7 +40,18 @@ nextButton.addEventListener('click', () => {
 prevButton.addEventListener('click', () => { if (state.step > 1) { state.step -= 1; updateStep(); } });
 
 function showResult(data) {
-  document.querySelector('#result-title').textContent = data.title;
+  const resultTitle = document.querySelector('#result-title');
+resultTitle.textContent = '';
+
+const titleParts = String(data.title).split(',');
+
+titleParts.forEach((part, index) => {
+  if (index > 0) {
+    resultTitle.appendChild(document.createElement('br'));
+  }
+
+  resultTitle.appendChild(document.createTextNode(part.trim()));
+});
   document.querySelector('#result-summary').textContent = data.summary;
   document.querySelector('#result-tip-text').textContent = data.tip;
   document.querySelector('#closing-message').textContent = `“${data.closing_message}”`;
