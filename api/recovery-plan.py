@@ -71,6 +71,7 @@ class handler(BaseHTTPRequestHandler):
                 contents=f"{instructions}\n\n사용자 입력 JSON:\n{user_input}",
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
+                    response_schema=schema,
                     max_output_tokens=700,
                     temperature=0.7,
                 ),
