@@ -66,7 +66,7 @@ class handler(BaseHTTPRequestHandler):
         }
 
         try:
-            client = OpenAI()
+            client = OpenAI(timeout=10.0, max_retries=0)
             response = client.responses.create(
                 model=os.environ.get("OPENAI_MODEL", "gpt-4.1-mini"),
                 instructions=instructions,
