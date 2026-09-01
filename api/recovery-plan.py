@@ -2,7 +2,8 @@ import json
 import os
 from http.server import BaseHTTPRequestHandler
 
-from openai import OpenAI
+from google import genai
+from google.genai import types
 
 
 REQUIRED_FIELDS = {"isOffWork", "mood", "fatigue", "availableTime"}
@@ -29,7 +30,7 @@ class handler(BaseHTTPRequestHandler):
             self._send_json(400, {"error": "필수 질문에 모두 답해 주세요."})
             return
 
-        if not os.environ.get("OPENAI_API_KEY"):
+        if not os.environ.get("GEMINI_API_KEY"):
             self._send_json(500, {"error": "서버 환경 변수가 설정되지 않았습니다."})
             return
 
@@ -45,8 +46,6 @@ class handler(BaseHTTPRequestHandler):
                 "summary": {"type": "string"},
                 "steps": {
                     "type": "array",
-                    "minItems": 3,
-                    "maxItems": 5,
                     "items": {
                         "type": "object",
                         "properties": {
@@ -66,19 +65,22 @@ class handler(BaseHTTPRequestHandler):
         }
 
         try:
-            client = OpenAI(timeout=10.0, max_retries=0)
-            response = client.responses.create(
-                model=os.environ.get("OPENAI_MODEL", "gpt-4.1-mini"),
-                instructions=instructions,
-                input=user_input,
-                max_output_tokens=800,
-                text={"format": {"type": "json_schema", "name": "recovery_plan", "strict": True, "schema": schema}},
+            client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+            response = client.models.generate_content(
+                model=os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite"),
+                contents=f"{instructions}\n\n사용자 입력 JSON:\n{user_input}",
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=schema,
+                    max_output_tokens=700,
+                    temperature=0.7,
+                ),
             )
-            self._send_json(200, json.loads(response.output_text))
+            self._send_json(200, json.loads(response.text))
         except Exception as error:
-            print(f"OpenAI request failed: {error}")
+            print(f"Gemini request failed: {error}")
             self._send_json(502, {
-                "error": "AI 응답을 생성하지 못했습니다.",
+                "error": "Gemini 응답을 생성하지 못했습니다.",
                 "code": type(error).__name__
             })
 

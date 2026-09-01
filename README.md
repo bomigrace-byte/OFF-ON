@@ -6,7 +6,7 @@
 
 - Frontend: HTML, CSS, Vanilla JavaScript
 - Backend: Vercel Serverless Functions (Python)
-- AI: OpenAI Responses API
+- AI: Google Gemini API
 - Deployment: Vercel
 
 ## 프로젝트 구조
@@ -32,18 +32,18 @@ vercel dev
 `.env` 파일에 아래 값을 설정합니다. 이 파일은 절대 GitHub에 올리지 않습니다.
 
 ```text
-OPENAI_API_KEY=your_api_key
+GEMINI_API_KEY=your_api_key
 # 선택: 사용할 모델을 지정할 때만 설정
-OPENAI_MODEL=gpt-4.1-mini
+GEMINI_MODEL=gemini-2.5-flash-lite
 ```
 
-Vercel 배포 시에도 Project Settings → Environment Variables에서 `OPENAI_API_KEY`를 등록해야 합니다.
+Vercel 배포 시에도 Project Settings → Environment Variables에서 `GEMINI_API_KEY`를 등록해야 합니다.
 
 ## 배포
 
 1. GitHub에 프로젝트를 올립니다.
 2. Vercel에서 해당 저장소를 Import합니다.
-3. `OPENAI_API_KEY`를 환경 변수로 등록합니다.
+3. `GEMINI_API_KEY`를 환경 변수로 등록합니다.
 4. Deploy를 누르고, 생성된 URL에서 질문·결과 생성 기능을 테스트합니다.
 
 배포 URL: 배포 후 이곳에 작성
