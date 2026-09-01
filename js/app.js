@@ -41,17 +41,23 @@ prevButton.addEventListener('click', () => { if (state.step > 1) { state.step -=
 
 function showResult(data) {
   const resultTitle = document.querySelector('#result-title');
-resultTitle.textContent = '';
+  resultTitle.textContent = '';
 
-const titleParts = String(data.title).split(',');
+  const title = String(data.title).trim();
+  const titleParts = title.split(',');
 
-titleParts.forEach((part, index) => {
-  if (index > 0) {
-    resultTitle.appendChild(document.createElement('br'));
+  if (titleParts.length >= 2) {
+    titleParts.forEach((part, index) => {
+      if (index > 0) {
+        resultTitle.appendChild(document.createElement('br'));
+      }
+
+      resultTitle.appendChild(document.createTextNode(part.trim()));
+    });
+  } else {
+    resultTitle.textContent = title;
   }
 
-  resultTitle.appendChild(document.createTextNode(part.trim()));
-});
   document.querySelector('#result-summary').textContent = data.summary;
   document.querySelector('#result-tip-text').textContent = data.tip;
   document.querySelector('#closing-message').textContent = `“${data.closing_message}”`;

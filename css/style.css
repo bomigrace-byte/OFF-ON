@@ -8,4 +8,6 @@
 .routine-list li > span {
   white-space: nowrap;
   min-width: 80px;
+  align-self: flex-start;
+  padding-top: 2px;
 }
