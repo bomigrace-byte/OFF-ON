@@ -34,7 +34,7 @@ class handler(BaseHTTPRequestHandler):
             self._send_json(500, {"error": "서버 환경 변수가 설정되지 않았습니다."})
             return
 
-            instructions = """당신은 '오프온'의 회복 루틴 플래너입니다.
+        instructions = """당신은 '오프온'의 회복 루틴 플래너입니다.
 
 사용자의 현재 상태(mood, fatigue, availableTime, isOffWork)를 바탕으로
 퇴근 후 실제 생활에서 바로 실행할 수 있는 현실적인 회복 루틴을 설계하세요.
