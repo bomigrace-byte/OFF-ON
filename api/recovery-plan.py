@@ -54,14 +54,12 @@ class handler(BaseHTTPRequestHandler):
                             "description": {"type": "string"},
                         },
                         "required": ["minutes", "action", "description"],
-                        "additionalProperties": False,
                     },
                 },
                 "tip": {"type": "string"},
                 "closing_message": {"type": "string"},
             },
-            "required": ["title", "summary", "steps", "tip", "closing_message"],
-            "additionalProperties": False,
+            "required": ["title", "summary", "steps", "tip", "closing_message"]
         }
 
         try:
