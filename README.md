@@ -118,7 +118,7 @@ Vercel 배포 시에는 Project Settings → Environment Variables에서
 
 ### 배포 URL
 
-https://off-dp2w08kx5-bomi-s.vercel.app/
+https://off-on-one.vercel.app/
 
 ### GitHub
 
