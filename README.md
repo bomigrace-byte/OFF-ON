@@ -104,11 +104,15 @@ OFF:ON은 AI에게 코드를 한 번 생성하고 끝내는 방식이 아니라,
 
 수정 후 실제 AI 결과를 다시 확인하여 개선 여부를 검증했습니다.
 
+| <img width="664" height="841" alt="04-time-allocation" src="https://github.com/user-attachments/assets/dd32ddfa-4bb3-4ee0-8875-9ac4a8a6f512" /> |
+
 ### 2. 추천 행동 다양화
 
 초기 AI 결과에서 샤워, 음악 감상 등 비슷한 행동이 반복되는 문제가 발견되었습니다.
 
 다양한 회복 행동 유형을 정의하고, 사용자의 상태에 따라 서로 다른 행동을 조합하도록 AI 프롬프트를 개선했습니다.
+
+| <img width="642" height="829" alt="05-routine-diversity" src="https://github.com/user-attachments/assets/6910bf57-72d1-4ca9-bb3f-eb818fc7f8b6" /> |
 
 ### 3. UI 개선
 
@@ -119,6 +123,10 @@ OFF:ON은 AI에게 코드를 한 번 생성하고 끝내는 방식이 아니라,
 - 시간 표시 정렬
 - 모바일 화면 가독성
 - 결과 화면의 세부 간격
+
+| <img width="641" height="797" alt="01-ui-improvement" src="https://github.com/user-attachments/assets/97fa397f-3367-4489-a776-c0ebce6ccec5" /> |
+| <img width="645" height="771" alt="02-css-layout" src="https://github.com/user-attachments/assets/84ed1ab3-5fd3-465c-808b-9a65cf9e9fbb" /> |
+| <img width="646" height="789" alt="03-css-improvement" src="https://github.com/user-attachments/assets/0d3d2f07-cbea-4365-a6fb-27706a09505a" /> |
 
 ### AI 활용 방식
 
