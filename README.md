@@ -27,30 +27,30 @@ OFF:ON은 퇴근 후 무언가를 더 해내야 한다는 부담 대신,
 
 ## 프로젝트 구조
 
-OFF-ON/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── app.js
-├── api/
-│   └── recovery-plan.py
-├── outputs/
-│   └── OFFON_PRD.md
-├── requirements.txt
-├── vercel.json
-└── .gitignore
+    OFF-ON/
+    ├── index.html
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── app.js
+    ├── api/
+    │   └── recovery-plan.py
+    ├── outputs/
+    │   └── OFFON_PRD.md
+    ├── requirements.txt
+    ├── vercel.json
+    └── .gitignore
 
 ### 주요 파일 설명
 
-- index.html: 웹 서비스의 화면 구성
-- css/style.css: 반응형 디자인 및 스타일
-- js/app.js: 질문 흐름, API 호출, 결과 화면 처리
-- api/recovery-plan.py: Gemini API를 호출하는 Python Serverless Function
-- outputs/OFFON_PRD.md: 서비스 기획서
-- requirements.txt: Python 패키지 의존성
-- vercel.json: Vercel 배포 설정
-- .gitignore: 환경 변수 등 Git에서 제외할 파일 설정
+- `index.html`: 웹 서비스의 화면 구성
+- `css/style.css`: 반응형 디자인 및 스타일
+- `js/app.js`: 질문 흐름, API 호출, 결과 화면 처리
+- `api/recovery-plan.py`: Gemini API를 호출하는 Python Serverless Function
+- `outputs/OFFON_PRD.md`: 서비스 기획서
+- `requirements.txt`: Python 패키지 의존성
+- `vercel.json`: Vercel 배포 설정
+- `.gitignore`: 환경 변수 등 Git에서 제외할 파일 설정
 
 ## AI 동작 방식
 
@@ -61,58 +61,58 @@ OFF-ON/
 3. 현재 피로도
 4. 저녁에 사용할 수 있는 시간
 
-입력된 정보는 프론트엔드에서 /api/recovery-plan으로 전달됩니다.
+입력된 정보는 프론트엔드에서 `/api/recovery-plan`으로 전달됩니다.
 
 Python Serverless Function이 Google Gemini API를 호출하고,
 AI가 생성한 회복 루틴을 JSON 형태로 반환합니다.
 
 반환된 결과는 프론트엔드에서 회복 루틴 카드 형태로 표시됩니다.
 
-사용자 입력
-    ↓
-HTML / JavaScript
-    ↓
-fetch('/api/recovery-plan')
-    ↓
-Vercel Serverless Function (Python)
-    ↓
-Google Gemini API
-    ↓
-JSON 회복 루틴
-    ↓
-웹 화면에 결과 표시
+    사용자 입력
+        ↓
+    HTML / JavaScript
+        ↓
+    fetch('/api/recovery-plan')
+        ↓
+    Vercel Serverless Function (Python)
+        ↓
+    Google Gemini API
+        ↓
+    JSON 회복 루틴
+        ↓
+    웹 화면에 결과 표시
 
 ## 로컬 실행
 
-정적 화면은 index.html을 브라우저에서 열어 확인할 수 있습니다.
+정적 화면은 `index.html`을 브라우저에서 열어 확인할 수 있습니다.
 
 API까지 함께 테스트하려면 Vercel CLI를 사용합니다.
 
-npm install -g vercel
-vercel dev
+    npm install -g vercel
+    vercel dev
 
 ## 환경 변수
 
-로컬 개발 시 .env 파일에 Gemini API 키를 설정합니다.
+로컬 개발 시 `.env` 파일에 Gemini API 키를 설정합니다.
 
-GEMINI_API_KEY=your_api_key
+    GEMINI_API_KEY=your_api_key
 
 선택 사항:
 
-GEMINI_MODEL=gemini-3.1-flash-lite
+    GEMINI_MODEL=gemini-3.1-flash-lite
 
 API 키는 프론트엔드 코드에 직접 작성하지 않습니다.
 
-.env 파일은 .gitignore에 포함하여 GitHub에 업로드하지 않습니다.
+`.env` 파일은 `.gitignore`에 포함하여 GitHub에 업로드하지 않습니다.
 
 Vercel 배포 시에는 Project Settings → Environment Variables에서
-GEMINI_API_KEY를 등록해야 합니다.
+`GEMINI_API_KEY`를 등록해야 합니다.
 
 ## 배포
 
 1. GitHub에 프로젝트를 업로드합니다.
 2. Vercel에서 GitHub 저장소를 Import합니다.
-3. GEMINI_API_KEY를 환경 변수에 등록합니다.
+3. `GEMINI_API_KEY`를 환경 변수에 등록합니다.
 4. Deploy를 실행합니다.
 5. 배포된 URL에서 플래너와 AI 루틴 생성 기능을 테스트합니다.
 
