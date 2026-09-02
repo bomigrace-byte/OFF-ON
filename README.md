@@ -86,6 +86,7 @@ JavaScript
 
 프론트엔드에서 Gemini API를 직접 호출하지 않고 Python Serverless Function을 통해 요청하여 API 키를 클라이언트 코드에 노출하지 않습니다.
 
+
 ## 🔄 AI 활용 개발 과정
 
 OFF:ON은 AI에게 코드를 한 번 생성하고 끝내는 방식이 아니라, 실제 서비스를 실행하고 결과를 확인하면서 문제를 발견하고 AI와 함께 개선했습니다.
@@ -245,11 +246,11 @@ Vercel 배포 시에는 Project Settings → Environment Variables에서 `GEMINI
 
 ### 배포 URL
 
-https://off-on-one.vercel.app/
+[OFF:ON 바로가기](https://off-on-one.vercel.app/)
 
 ### GitHub
 
-https://github.com/bomigrace-byte/OFF-ON
+[OFF-ON Repository](https://github.com/bomigrace-byte/OFF-ON)
 
 ## 📚 프로젝트 문서
 
@@ -258,22 +259,26 @@ https://github.com/bomigrace-byte/OFF-ON
 
 ## 📸 증빙 자료
 
-### 서비스 화면
+### 서비스 구현 증빙
 
-서비스의 데스크톱 및 모바일 화면과 AI 결과 화면은 `outputs/screenshots/`에 정리합니다.
+`outputs/screenshots/`에 데스크톱 및 모바일 화면,
+AI 결과 화면을 정리했습니다.
 
-### AI 코딩 과정
+### AI 활용 개발 증빙
 
-AI 코딩 과정은 `outputs/ai-coding/`에 정리합니다.
+`outputs/ai-coding/`에 AI를 활용하여
+문제를 발견하고 개선한 과정을 정리했습니다.
 
-주요 증빙 내용:
+주요 개선 사례:
 
-- UI 문제 발견 및 CSS 개선
-- AI 결과 시간 배분 개선
-- 추천 루틴 다양화
+- UI 문제 발견 → CSS 개선
+- AI 결과 시간 배분 문제 → 프롬프트 개선
+- 반복적인 추천 행동 → 루틴 다양화
+- 결과 카드 레이아웃 및 시간 표시 개선
 - 결과 카드 UI 개선
 
 AI 코딩 과정에서는 실제 서비스 테스트를 통해 발견한 문제를 AI에게 설명하고, 코드 및 프롬프트를 수정한 과정을 확인할 수 있습니다.
+
 
 ## ⚠️ 주의사항
 
