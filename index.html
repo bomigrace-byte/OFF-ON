@@ -1,110 +1,179 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="퇴근 후 나에게 맞는 회복 루틴을 제안하는 AI 플래너, 오프온" />
-    <title>OFF:ON — 업무는 OFF, 나의 회복은 ON</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nanum+Myeongjo:wght@700;800&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="오프온 홈">
-        <span class="brand-off">OFF</span><span class="brand-colon">:</span><span class="brand-on">ON</span>
-      </a>
-      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav">
-        <span></span><span></span>
-      </button>
-      <nav id="main-nav" class="main-nav" aria-label="주요 메뉴">
-        <a href="#home">홈</a>
-        <a href="#planner">회복 플래너</a>
-        <a href="#guide">회복 가이드</a>
-      </nav>
-    </header>
 
-    <main>
-      <section id="home" class="hero section-wrap">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pulse-dot"></span> EVENING RECOVERY PLANNER</p>
-          <h1>오늘 하루를<br /><em>나에게 돌려주세요.</em></h1>
-          <p class="hero-text">퇴근 후의 나에게 필요한 건 더 많은 계획이 아니라,<br />지금 바로 시작할 수 있는 작은 회복이에요.</p>
-          <a class="button button-primary" href="#planner">오늘의 루틴 만들기 <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="hero-orb" aria-hidden="true">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="switch-card"><span>WORK</span><div class="switch"><i></i></div><span>ME</span></div>
-          <p>OFF&nbsp;&nbsp;→&nbsp;&nbsp;ON</p>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="퇴근 후 나에게 맞는 회복 루틴을 제안하는 AI 플래너, 오프온" />
+  <title>OFF:ON — 업무는 OFF, 나의 회복은 ON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nanum+Myeongjo:wght@700;800&family=Pretendard:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-      <section class="how-it-works section-wrap" aria-labelledby="how-title">
-        <div class="section-heading"><p class="eyebrow">HOW IT WORKS</p><h2 id="how-title">복잡하게 생각하지 않아도 돼요.</h2></div>
-        <div class="steps-grid">
-          <article><span>01</span><h3>오늘의 상태 선택</h3><p>기분, 피로도, 남은 시간을<br />버튼으로 가볍게 알려주세요.</p></article>
-          <article><span>02</span><h3>AI 루틴 생성</h3><p>오프온이 현재 상태에 맞는<br />현실적인 회복 시간을 설계해요.</p></article>
-          <article><span>03</span><h3>작게 시작하기</h3><p>가장 쉬운 첫 단계부터<br />오늘의 나를 돌봐주세요.</p></article>
-        </div>
-      </section>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="오프온 홈">
+      <span class="brand-off">OFF</span><span class="brand-colon">:</span><span class="brand-on">ON</span>
+    </a>
+    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="주요 메뉴">
+      <a href="#home">홈</a>
+      <a href="#planner">회복 플래너</a>
+      <a href="#guide">회복 가이드</a>
+    </nav>
+  </header>
 
-      <section id="planner" class="planner-section section-wrap" aria-labelledby="planner-title">
-        <div class="planner-intro">
-          <p class="eyebrow">TODAY'S CHECK-IN</p>
-          <h2 id="planner-title">지금의 나를<br />잠깐 살펴볼까요?</h2>
+  <main>
+    <section id="home" class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> EVENING RECOVERY PLANNER</p>
+        <h1>오늘 하루를<br /><em>나에게 돌려주세요.</em></h1>
+        <p class="hero-text">퇴근 후의 나에게 필요한 건 더 많은 계획이 아니라,<br />지금 바로 시작할 수 있는 작은 회복이에요.</p>
+        <a class="button button-primary" href="#planner">오늘의 루틴 만들기 <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-orb" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="switch-card"><span>WORK</span>
+          <div class="switch"><i></i></div><span>ME</span>
+        </div>
+        <p>OFF&nbsp;&nbsp;→&nbsp;&nbsp;ON</p>
+      </div>
+    </section>
+
+    <section class="how-it-works section-wrap" aria-labelledby="how-title">
+      <div class="section-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2 id="how-title">복잡하게 생각하지 않아도 돼요.</h2>
+      </div>
+      <div class="steps-grid">
+        <article><span>01</span>
+          <h3>오늘의 상태 선택</h3>
+          <p>기분, 피로도, 남은 시간을<br />버튼으로 가볍게 알려주세요.</p>
+        </article>
+        <article><span>02</span>
+          <h3>AI 루틴 생성</h3>
+          <p>오프온이 현재 상태에 맞는<br />현실적인 회복 시간을 설계해요.</p>
+        </article>
+        <article><span>03</span>
+          <h3>작게 시작하기</h3>
+          <p>가장 쉬운 첫 단계부터<br />오늘의 나를 돌봐주세요.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="planner" class="planner-section section-wrap" aria-labelledby="planner-title">
+      <div class="planner-intro">
+        <p class="eyebrow">TODAY'S CHECK-IN</p>
+        <h2 id="planner-title">
+          <h2>지금의 나를<br />잠깐 살펴볼까요?</h2>
           <p>정답은 없어요. 가장 가까운 답을 골라주세요.</p>
           <div class="planner-note"><span>✦</span> AI가 제안하는 일상 회복 아이디어예요.<br />의료·심리 상담을 대신하지 않습니다.</div>
-        </div>
+      </div>
 
-        <div class="planner-panel">
-          <div class="progress-row"><span id="progress-label">01 / 04</span><div class="progress-track"><i id="progress-bar"></i></div></div>
-          <form id="planner-form" novalidate>
-            <fieldset class="question active" data-step="1">
-              <legend>지금 퇴근했나요?</legend>
-              <p class="question-hint">아직이라도 괜찮아요. 퇴근 전 전환 루틴을 제안해 드릴게요.</p>
-              <div class="choice-grid two"><button type="button" class="choice" data-field="isOffWork" data-value="true"><b>✓</b> 네, 퇴근했어요</button><button type="button" class="choice" data-field="isOffWork" data-value="false"><b>◌</b> 아직 퇴근 전이에요</button></div>
-            </fieldset>
-            <fieldset class="question" data-step="2">
-              <legend>기분이 어때요?</legend>
-              <p class="question-hint">가장 가까운 마음을 골라주세요.</p>
-              <div class="choice-grid three"><button type="button" class="choice" data-field="mood" data-value="좋아요"><b>😊</b> 좋아요</button><button type="button" class="choice" data-field="mood" data-value="그냥 그래요"><b>😐</b> 그냥 그래요</button><button type="button" class="choice" data-field="mood" data-value="별로예요"><b>😔</b> 별로예요</button></div>
-            </fieldset>
-            <fieldset class="question" data-step="3">
-              <legend>많이 지쳤나요?</legend>
-              <p class="question-hint">오늘의 에너지 상태를 알려주세요.</p>
-              <div class="choice-grid three"><button type="button" class="choice" data-field="fatigue" data-value="완전 방전"><b>😴</b> 완전 방전</button><button type="button" class="choice" data-field="fatigue" data-value="좀 피곤해요"><b>😐</b> 좀 피곤해요</button><button type="button" class="choice" data-field="fatigue" data-value="그래도 괜찮아요"><b>💪</b> 그래도 괜찮아요</button></div>
-            </fieldset>
-            <fieldset class="question" data-step="4">
-              <legend>저녁 시간은 얼마나 비어 있나요?</legend>
-              <p class="question-hint">계획이 없어도 괜찮아요. 지금 가능한 시간만 골라주세요.</p>
-              <div class="choice-grid three"><button type="button" class="choice" data-field="availableTime" data-value="1시간 이내"><b>01</b> 1시간 이내</button><button type="button" class="choice" data-field="availableTime" data-value="1~2시간"><b>02</b> 1~2시간</button><button type="button" class="choice" data-field="availableTime" data-value="3시간 이상"><b>03</b> 3시간 이상</button></div>
-            </fieldset>
-            <p id="form-error" class="form-error" role="alert"></p>
-            <div class="form-actions"><button type="button" id="prev-button" class="button button-ghost" disabled>이전</button><button type="button" id="next-button" class="button button-primary">다음 <span aria-hidden="true">→</span></button><button type="submit" id="submit-button" class="button button-primary hidden">나만의 루틴 만들기 <span aria-hidden="true">→</span></button></div>
-          </form>
+      <div class="planner-panel">
+        <div class="progress-row"><span id="progress-label">01 / 04</span>
+          <div class="progress-track"><i id="progress-bar"></i></div>
         </div>
-      </section>
+        <form id="planner-form" novalidate>
+          <fieldset class="question active" data-step="1">
+            <legend>지금 퇴근했나요?</legend>
+            <p class="question-hint">아직이라도 괜찮아요. 퇴근 전 전환 루틴을 제안해 드릴게요.</p>
+            <div class="choice-grid two"><button type="button" class="choice" data-field="isOffWork"
+                data-value="true"><b>✓</b> 네, 퇴근했어요</button><button type="button" class="choice" data-field="isOffWork"
+                data-value="false"><b>◌</b> 아직 퇴근 전이에요</button></div>
+          </fieldset>
+          <fieldset class="question" data-step="2">
+            <legend>기분이 어때요?</legend>
+            <p class="question-hint">가장 가까운 마음을 골라주세요.</p>
+            <div class="choice-grid three"><button type="button" class="choice" data-field="mood"
+                data-value="좋아요"><b>😊</b> 좋아요</button><button type="button" class="choice" data-field="mood"
+                data-value="그냥 그래요"><b>😐</b> 그냥 그래요</button><button type="button" class="choice" data-field="mood"
+                data-value="별로예요"><b>😔</b> 별로예요</button></div>
+          </fieldset>
+          <fieldset class="question" data-step="3">
+            <legend>많이 지쳤나요?</legend>
+            <p class="question-hint">오늘의 에너지 상태를 알려주세요.</p>
+            <div class="choice-grid three"><button type="button" class="choice" data-field="fatigue"
+                data-value="완전 방전"><b>😴</b> 완전 방전</button><button type="button" class="choice" data-field="fatigue"
+                data-value="좀 피곤해요"><b>😐</b> 좀 피곤해요</button><button type="button" class="choice" data-field="fatigue"
+                data-value="그래도 괜찮아요"><b>💪</b> 그래도 괜찮아요</button></div>
+          </fieldset>
+          <fieldset class="question" data-step="4">
+            <legend>저녁 시간은 얼마나 비어 있나요?</legend>
+            <p class="question-hint">계획이 없어도 괜찮아요. 지금 가능한 시간만 골라주세요.</p>
+            <div class="choice-grid three"><button type="button" class="choice" data-field="availableTime"
+                data-value="1시간 이내"><b>01</b> 1시간 이내</button><button type="button" class="choice"
+                data-field="availableTime" data-value="1~2시간"><b>02</b> 1~2시간</button><button type="button"
+                class="choice" data-field="availableTime" data-value="3시간 이상"><b>03</b> 3시간 이상</button></div>
+          </fieldset>
+          <p id="form-error" class="form-error" role="alert"></p>
+          <div class="form-actions"><button type="button" id="prev-button" class="button button-ghost"
+              disabled>이전</button><button type="button" id="next-button" class="button button-primary">다음 <span
+                aria-hidden="true">→</span></button><button type="submit" id="submit-button"
+              class="button button-primary hidden">나만의 루틴 만들기 <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+    </section>
 
-      <section id="result-section" class="result-section section-wrap" aria-live="polite" hidden>
-        <div id="loading-state" class="loading-state" hidden><div class="loader"></div><p>AI가 오늘의 회복 시간을 설계하고 있어요…</p></div>
-        <div id="api-error" class="api-error" hidden><span>!</span><h2>루틴을 불러오지 못했어요.</h2><p>잠시 후 다시 시도해 주세요.</p><button id="retry-button" class="button button-primary">다시 시도하기</button></div>
-        <article id="result-card" class="result-card" hidden>
-          <div class="result-header"><p class="eyebrow">YOUR RECOVERY PLAN</p><button id="restart-button" class="text-button">처음부터 다시 하기</button></div>
-          <h2 id="result-title"></h2><p id="result-summary" class="result-summary"></p>
-          <ol id="result-steps" class="routine-list"></ol>
-          <div class="result-tip"><span>✦</span><div><strong>오늘의 실행 팁</strong><p id="result-tip-text"></p></div></div>
-          <p id="closing-message" class="closing-message"></p>
+    <section id="result-section" class="result-section section-wrap" aria-live="polite" hidden>
+      <div id="loading-state" class="loading-state" hidden>
+        <div class="loader"></div>
+        <p>AI가 오늘의 회복 시간을 설계하고 있어요…</p>
+      </div>
+      <div id="api-error" class="api-error" hidden><span>!</span>
+        <h2>루틴을 불러오지 못했어요.</h2>
+        <p>잠시 후 다시 시도해 주세요.</p><button id="retry-button" class="button button-primary">다시 시도하기</button>
+      </div>
+      <article id="result-card" class="result-card" hidden>
+        <div class="result-header">
+          <p class="eyebrow">YOUR RECOVERY PLAN</p><button id="restart-button" class="text-button">처음부터 다시 하기</button>
+        </div>
+        <h2 id="result-title"></h2>
+        <p id="result-summary" class="result-summary"></p>
+        <ol id="result-steps" class="routine-list"></ol>
+        <div class="result-tip"><span>✦</span>
+          <div><strong>오늘의 실행 팁</strong>
+            <p id="result-tip-text"></p>
+          </div>
+        </div>
+        <p id="closing-message" class="closing-message"></p>
+      </article>
+    </section>
+
+    <section id="guide" class="guide-section section-wrap" aria-labelledby="guide-title">
+      <div class="section-heading">
+        <p class="eyebrow">RECOVERY GUIDE</p>
+        <h2 id="guide-title">회복은 대단하지 않아도 충분해요.</h2>
+      </div>
+      <div class="guide-grid">
+        <article><span>15 MIN</span>
+          <h3>작은 전환</h3>
+          <p>물 한 잔, 환기, 스트레칭처럼 업무 모드를 끄는 데 집중해요.</p>
         </article>
-      </section>
+        <article><span>60 MIN</span>
+          <h3>가벼운 리셋</h3>
+          <p>샤워, 식사, 산책 중 하나를 천천히 하며 자극을 줄여봐요.</p>
+        </article>
+        <article><span>TONIGHT</span>
+          <h3>나를 위한 마침표</h3>
+          <p>완벽한 하루 대신 “오늘도 수고했어”라고 말할 시간을 남겨요.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-      <section id="guide" class="guide-section section-wrap" aria-labelledby="guide-title">
-        <div class="section-heading"><p class="eyebrow">RECOVERY GUIDE</p><h2 id="guide-title">회복은 대단하지 않아도 충분해요.</h2></div>
-        <div class="guide-grid"><article><span>15 MIN</span><h3>작은 전환</h3><p>물 한 잔, 환기, 스트레칭처럼 업무 모드를 끄는 데 집중해요.</p></article><article><span>60 MIN</span><h3>가벼운 리셋</h3><p>샤워, 식사, 산책 중 하나를 천천히 하며 자극을 줄여봐요.</p></article><article><span>TONIGHT</span><h3>나를 위한 마침표</h3><p>완벽한 하루 대신 “오늘도 수고했어”라고 말할 시간을 남겨요.</p></article></div>
-      </section>
-    </main>
+  <footer><a class="brand" href="#home"><span class="brand-off">OFF</span><span class="brand-colon">:</span><span
+        class="brand-on">ON</span></a>
+    <p>오늘의 끝에서, 나를 켜는 시간.</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
 
-    <footer><a class="brand" href="#home"><span class="brand-off">OFF</span><span class="brand-colon">:</span><span class="brand-on">ON</span></a><p>오늘의 끝에서, 나를 켜는 시간.</p></footer>
-    <script src="js/app.js"></script>
-  </body>
 </html>
