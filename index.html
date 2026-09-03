@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="퇴근 후 나에게 맞는 회복 루틴을 제안하는 AI 플래너, 오프온" />
-  <title>OFF:ON — 업무는 OFF, 나의 회복은 ON</title>
+  <title>OFF:ON — 업무는 OFF, 나의 회복은 ON.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -16,13 +16,28 @@
 
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="오프온 홈">
-      <span class="brand-off">OFF</span><span class="brand-colon">:</span><span class="brand-on">ON</span>
-    </a>
+  <a class="brand" href="#home" aria-label="오프온 홈">
+    <span class="brand-off">OFF</span><span class="brand-colon">:</span><span class="brand-on">ON</span>
+  </a>
+
+  <div class="header-actions">
+    <button
+      type="button"
+      id="theme-toggle"
+      class="theme-toggle"
+      aria-label="다크 모드로 전환"
+      title="다크 모드로 전환"
+    >
+      <span id="theme-icon" aria-hidden="true">☾</span>
+    </button>
+
     <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span>
     </button>
-    <nav id="main-nav" class="main-nav" aria-label="주요 메뉴">
+  </div>
+
+  <nav id="main-nav" class="main-nav" aria-label="주요 메뉴">
+    
       <a href="#home">홈</a>
       <a href="#planner">회복 플래너</a>
       <a href="#guide">회복 가이드</a>

@@ -95,4 +95,45 @@ document.querySelector('#retry-button').addEventListener('click', requestPlan);
 document.querySelector('#restart-button').addEventListener('click', () => { state.step = 1; state.answers = {}; document.querySelectorAll('.choice').forEach((choice) => choice.classList.remove('selected')); resultSection.hidden = true; updateStep(); document.querySelector('#planner').scrollIntoView({ behavior: 'smooth' }); });
 document.querySelector('.menu-toggle').addEventListener('click', (event) => { const nav = document.querySelector('.main-nav'); const open = nav.classList.toggle('open'); event.currentTarget.setAttribute('aria-expanded', String(open)); });
 document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => document.querySelector('.main-nav').classList.remove('open')));
+
+// ---------- Dark Mode ----------
+
+const themeToggle = document.querySelector('#theme-toggle');
+const themeIcon = document.querySelector('#theme-icon');
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+
+  document.body.classList.toggle('dark-mode', isDark);
+
+  themeIcon.textContent = isDark ? '☀' : '☾';
+
+  themeToggle.setAttribute(
+    'aria-label',
+    isDark ? '라이트 모드로 전환' : '다크 모드로 전환'
+  );
+
+  themeToggle.setAttribute(
+    'title',
+    isDark ? '라이트 모드로 전환' : '다크 모드로 전환'
+  );
+}
+
+const savedTheme = localStorage.getItem('off-on-theme');
+
+if (savedTheme === 'dark' || savedTheme === 'light') {
+  applyTheme(savedTheme);
+} else {
+  applyTheme('light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.body.classList.contains('dark-mode')
+    ? 'light'
+    : 'dark';
+
+  applyTheme(nextTheme);
+  localStorage.setItem('off-on-theme', nextTheme);
+});
+
 updateStep();
