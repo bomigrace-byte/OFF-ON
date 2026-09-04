@@ -278,6 +278,25 @@ API 키는 프론트엔드 코드에 직접 작성하지 않습니다.
 
 Vercel 배포 시에는 Project Settings → Environment Variables에서 `GEMINI_API_KEY`를 등록합니다.
 
+### API 키 유출 대응
+
+API 키가 코드, GitHub 커밋, 로그 또는 기타 경로를 통해 외부에 노출된 것으로 의심되는 경우 다음 순서로 대응합니다.
+
+1. 기존 API 키를 즉시 무효화합니다.
+2. 새 API 키를 발급하고 교체합니다.
+3. Vercel 및 로컬 환경의 환경 변수를 새 키로 변경합니다.
+4. GitHub 커밋과 로그에서 키가 노출된 경로를 확인합니다.
+5. 필요한 경우 노출된 키가 포함된 커밋을 정리하고 재발 방지 조치를 적용합니다.
+6. 새 키로 배포한 후 AI 기능이 정상적으로 동작하는지 확인합니다.
+
+### 기술별 영향 및 대응
+
+OFF:ON은 프론트엔드 프레임워크를 사용하지 않고 Vanilla JavaScript와 Vercel Serverless Functions(Python)를 사용합니다.
+
+- **Vanilla JavaScript:** API 키가 브라우저의 클라이언트 코드에 노출되지 않도록 Gemini API를 직접 호출하지 않습니다. 키는 백엔드에서만 사용합니다.
+- **Vercel Serverless Functions:** `GEMINI_API_KEY`를 Vercel Environment Variables에서 관리하고 Python 백엔드에서만 접근합니다.
+- **Google Gemini API / `google-genai`:** API 키가 유출되면 해당 키를 통한 API 호출 및 사용량 증가가 발생할 수 있으므로 기존 키를 즉시 무효화하고 새 키로 교체합니다.
+
 ## 🚀 배포
 
 1. GitHub에 프로젝트를 업로드합니다.
